@@ -36,6 +36,5 @@ class UserDefaultsManager {
     static func saveBool(_ bool: Bool, forKey key: String) {
         print("DEBUG SAVE: key=\(key), value=\(bool), suite=\(userDefaults.description)")
         userDefaults.set(bool, forKey: key)
-        userDefaults.synchronize()
     }
 }
