@@ -1,17 +1,20 @@
 # MovieDB
 ## About
-This iOS app tries to recreate the MovieDB interface by showing a list of selectable movies and then navigating to a screen with more details about the selected movie. The UI is built completely programmatically, without using Storyboards.
+This iOS app allows users to browse a list of movies pulled from the MovieDB API, click on a movie poster to read more about it, and create accounts and log in.
 
 ## Tech Stack
+- Xcode
 - UIKit
 - Swift
-- XCode version 26.2
+- UserDefaults
+- Keychain
 
 ## Features
-- Log In screen that allows the user to toggle a "Remember Username" setting
-- Sign Up screen that allows user to create account
-- Collection View Home screen that displays the same list of movies in a grid layout
+- Log In screen that allows the user to log in and toggle a "Remember Username" setting
+- Sign Up screen that allows the user to create an account
+- Collection View Home screen that displays a list of movies in a grid layout, pulled from the MovieDB API
 - Clicking on a movie from the list will take you to a screen with more information about the selected movie
+- Enable/Disable Internet toggle that switches between the production network manager and a mock network manager
 
 ## Demo
 ![](./MovieDB_Demo.gif)
