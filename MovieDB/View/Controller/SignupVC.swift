@@ -9,6 +9,8 @@ import UIKit
 
 class SignupVC: UIViewController {
     
+    // MARK: - UI Components
+    
     private lazy var signupHeader = {
         let header = UILabel()
         header.text = "Sign Up"
@@ -55,7 +57,11 @@ class SignupVC: UIViewController {
         return button
     }()
     
+    // MARK: - Properties (View Model)
+    
     private var signupViewModel: SignupViewModelProtocol
+    
+    // MARK: - Initializer (Injection)
     
     init(signupViewModel: SignupViewModelProtocol) {
         self.signupViewModel = signupViewModel
@@ -65,6 +71,8 @@ class SignupVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View Did Load
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +85,8 @@ class SignupVC: UIViewController {
         
         addConstraints()
     }
+    
+    // MARK: - Add Constraints
     
     private func addConstraints() {
         NSLayoutConstraint.activate([

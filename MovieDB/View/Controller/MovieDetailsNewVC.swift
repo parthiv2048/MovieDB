@@ -9,6 +9,8 @@ import UIKit
 
 class MovieDetailsNewVC: UIViewController {
     
+    // MARK: - UI Components
+    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +40,11 @@ class MovieDetailsNewVC: UIViewController {
         return true
     }
     
+    // MARK: - Properties (View Model)
+    
     var movieDetailsViewModel: MovieDetailsViewModelProtocol?
+    
+    // MARK: - Initializer (Injection)
     
     init(movieDetailsViewModel: MovieDetailsViewModelProtocol?) {
         super.init(nibName: nil, bundle: nil)
@@ -48,6 +54,8 @@ class MovieDetailsNewVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View Did Load
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +79,9 @@ class MovieDetailsNewVC: UIViewController {
     }
 }
 
+// MARK: - Table View Data Source & Delegate
+
 extension MovieDetailsNewVC: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }

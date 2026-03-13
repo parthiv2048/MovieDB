@@ -16,7 +16,7 @@ class SignupViewModel: SignupViewModelProtocol {
     init() {}
     
     func signup(username: String, password: String) {
-        KeychainManager.shared.save(password, service: "com.moviedb.auth", account: username)
+        KeychainManager.shared.save(password, service: ServiceConstants.auth.rawValue, account: username)
     }
 }
 

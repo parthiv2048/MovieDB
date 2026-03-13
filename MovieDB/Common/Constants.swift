@@ -7,20 +7,20 @@
 
 import UIKit
 
-// MARK: IDs for View Controllers
+// MARK: - IDs for View Controllers
 
 enum ViewControllerIdentifiers: String {
     case MovieListVC = "MovieListVC"
     case MovieDetailsVC = "MovieDetailsVC"
 }
 
-// MARK: IDs for Custom Views
+// MARK: - IDs for Custom Views
 
 enum ViewIdentifiers: String {
     case MovieListTableViewCell = "MovieListTableViewCell"
 }
 
-// MARK: Colors for UI Components
+// MARK: - Colors for UI Components
 
 enum ColorConstants {
     case viewBackgroundColor
@@ -39,17 +39,29 @@ enum ColorConstants {
     }
 }
 
-// MARK: Constraint Constants
+// MARK: - Constraint Constants
 
 enum ConstraintConstants: Double {
     case movieListTableViewRowHeight = 140.0
     case posterImageWidth = 120.0
 }
 
-// MARK: Server Endpoints
+// MARK: - Server Endpoints
 
 enum Server: String {
     case moviesList = "https://api.themoviedb.org/3/discover/movie?api_key=c91ed3a7a344459eccad9687acf0d07e"
     case imageBasePath = "https://image.tmdb.org/t/p/w500"
 }
 
+// MARK: - Service Constants
+
+enum ServiceConstants: String {
+    case auth = "com.moviedb.auth"
+}
+
+// MARK: - User Defaults Keys
+
+enum UserDefaultsKeys: String {
+    case rememberUsername = "rememberUsername"
+    case username = "username"
+}

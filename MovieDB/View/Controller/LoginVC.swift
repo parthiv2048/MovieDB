@@ -116,6 +116,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = ColorConstants.viewBackgroundColor.getColor
         
+        /// Get Remember Username toggle value from UserDefaults and populate fields accordingly
         let shouldRemember = loginViewModel.getRememberUsername()
         rememberUsernameToggle.isOn = shouldRemember
         if shouldRemember {
