@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieDetailsNewVC: UIViewController {
+class MovieDetailsVC: UIViewController {
     
     // MARK: - UI Components
     
@@ -66,7 +66,7 @@ class MovieDetailsNewVC: UIViewController {
         view.addSubview(navBar)
         tableView.pin(to: view)
         
-        let headerView = StrechyHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250))
+        let headerView = StrechyHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 400))
         if let posterImage = movieDetailsViewModel?.getPosterImage() {
             Task {
                 await headerView.imageView.loadImage(url: Server.imageBasePath.rawValue + posterImage)
@@ -81,7 +81,7 @@ class MovieDetailsNewVC: UIViewController {
 
 // MARK: - Table View Data Source & Delegate
 
-extension MovieDetailsNewVC: UITableViewDelegate, UITableViewDataSource {
+extension MovieDetailsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }

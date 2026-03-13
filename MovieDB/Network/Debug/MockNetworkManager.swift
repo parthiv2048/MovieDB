@@ -8,10 +8,9 @@
 import UIKit
 
 class MockNetworkManager: NetworkManagerProtocol {
-    /// Singleton object for one global point of access
     static let shared = MockNetworkManager()
     
-    init() {}
+    private init() {}
     
     func fetchMovies(_ moviesListURL: String?) async -> [MovieData] {
         guard let uwURL = moviesListURL, let serverURL = URL(string: uwURL) else {

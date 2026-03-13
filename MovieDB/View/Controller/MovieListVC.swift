@@ -9,7 +9,7 @@ import UIKit
 
 class MovieListVC: UIViewController {
     
-    // MARK: Properties
+    // MARK: - UI Components
     
     private lazy var movieListCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -38,8 +38,6 @@ class MovieListVC: UIViewController {
         return movieHeaderLabel
     }()
     
-    // MARK: Enable/Disable Internet Toggle
-    
     private let internetToggleLabel: UILabel = {
         let internetToggleLabel = UILabel()
         internetToggleLabel.text = "Disable Internet"
@@ -55,8 +53,6 @@ class MovieListVC: UIViewController {
         toggle.translatesAutoresizingMaskIntoConstraints = false
         return toggle
     }()
-    
-    // MARK: Movie Search Bar
         
     private var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
@@ -66,7 +62,11 @@ class MovieListVC: UIViewController {
         return searchBar
     }()
     
+    // MARK: - Properties (View Model)
+    
     private var movieListViewModel: MovieListViewModelProtocol?
+    
+    // MARK: - Initializer (Injection)
     
     init(movieListViewModel: MovieListViewModelProtocol?) {
         super.init(nibName: nil, bundle: nil)
@@ -90,6 +90,8 @@ class MovieListVC: UIViewController {
         super.viewDidLoad()
         setUpScreen()
     }
+    
+    // MARK: - Set Up Screen
     
     private func setUpScreen() {
         view.backgroundColor = ColorConstants.viewBackgroundColor.getColor
@@ -135,6 +137,8 @@ class MovieListVC: UIViewController {
         }
     }
 }
+
+// MARK: - Collection View Data Source & Delegate Methods
 
 extension MovieListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

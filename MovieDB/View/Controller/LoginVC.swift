@@ -37,7 +37,6 @@ class LoginVC: UIViewController {
         passwordTF.placeholder = "Password"
         passwordTF.borderStyle = .roundedRect
         passwordTF.translatesAutoresizingMaskIntoConstraints = false
-        
         return passwordTF
     }()
     

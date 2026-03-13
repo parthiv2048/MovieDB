@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func navigateToMovieDetails(movieData: MovieData?) {
-        let objMovieDetailsVC = MovieDetailsNewVC(movieDetailsViewModel: MovieDetailsViewModel(movie: movieData))
+        let objMovieDetailsVC = MovieDetailsVC(movieDetailsViewModel: MovieDetailsViewModel(movie: movieData))
         self.navigationController?.pushViewController(objMovieDetailsVC, animated: true)
     }
     

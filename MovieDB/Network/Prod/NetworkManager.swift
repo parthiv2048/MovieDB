@@ -7,12 +7,7 @@
 
 import UIKit
 
-protocol NetworkManagerProtocol {
-    func fetchMovies(_ moviesListURL: String?) async -> [MovieData]
-}
-
 class NetworkManager: NetworkManagerProtocol {
-    /// Singleton object for one global point of access
     static let shared = NetworkManager()
     
     private init() {}

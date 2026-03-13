@@ -15,7 +15,6 @@ protocol LoginViewModelProtocol {
 }
 
 class LoginViewModel: LoginViewModelProtocol {
-    
     init() {}
     
     func login(username: String, password: String, rememberUsername: Bool) -> Bool {

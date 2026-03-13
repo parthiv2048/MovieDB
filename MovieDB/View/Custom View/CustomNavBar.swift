@@ -9,7 +9,7 @@ import UIKit
 
 class CustomNavBar: UIView {
 
-    var controller: MovieDetailsNewVC?
+    var controller: MovieDetailsVC?
     
     let cardView:UIView = {
         let v = UIView()
