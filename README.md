@@ -3,11 +3,11 @@
 This iOS app allows users to browse a list of movies pulled from the MovieDB API, click on a movie poster to read more about it, and create accounts and log in.
 
 ## Tech Stack
+- Xcode
 - UIKit
 - Swift
 - UserDefaults
 - Keychain
-- XCode
 
 ## Features
 - Log In screen that allows the user to log in and toggle a "Remember Username" setting
