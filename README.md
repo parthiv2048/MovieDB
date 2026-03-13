@@ -8,8 +8,9 @@ This iOS app tries to recreate the MovieDB interface by showing a list of select
 - XCode version 26.2
 
 ## Features
-- Table View home screen that displays a list of movies with the title, poster, scores, etc.
-- Collection View screen that displays the same list of movies in a grid layout
+- Log In screen that allows the user to toggle a "Remember Username" setting
+- Sign Up screen that allows user to create account
+- Collection View Home screen that displays the same list of movies in a grid layout
 - Clicking on a movie from the list will take you to a screen with more information about the selected movie
 
 ## Demo
