@@ -107,7 +107,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         releaseYearLabel?.text = "Release: \(movieData?.releaseDate ?? "")"
         if let posterImage = movieData?.posterImage {
             Task {
-                await posterImageView?.loadImage(url: Server.imageBasePath.rawValue + posterImage)
+                await posterImageView?.loadImage(url: APIEndpoints.imageBasePath.rawValue + posterImage)
             }
         } else {
             posterImageView?.image = UIImage(systemName: "movieclapper.fill")

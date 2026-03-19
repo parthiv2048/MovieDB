@@ -5,6 +5,8 @@
 //  Created by Parthiv Ganguly on 2/3/26.
 //
 
+import Foundation
+
 protocol MovieListViewModelProtocol {
     func setService(service: NetworkManagerProtocol?)
     func fetchMovies() async
@@ -28,7 +30,8 @@ class MovieListViewModel: MovieListViewModelProtocol {
     }
     
     func fetchMovies() async {
-        self.movies = await service?.fetchMovies(Server.moviesList.rawValue) ?? []
+        let listURL = (APIBaseURL.listBaseURL?.absoluteString ?? "") + APIEndpoints.moviesList.rawValue
+        self.movies = await service?.fetchMovies(listURL) ?? []
         self.filteredMovies = self.movies
     }
     

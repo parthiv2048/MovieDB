@@ -53,26 +53,26 @@ extension UIView {
 
 extension UIImageView {
     func loadImage(url: String) async {
+        let backupImage = UIImage(systemName: "photo")
+        
         guard let serverURL = URL(string: url) else {
-            print("Log: Invalid URL")
-            return self.image = UIImage(systemName: "photo")
+            print("Invalid URL")
+            self.image = backupImage
+            return
         }
         
-        do {
-            let (data, response) = try await URLSession.shared.data(from: serverURL)
-            
-            if let serverResponse = response as? HTTPURLResponse, serverResponse.statusCode != 200 {
-                print("Log: No data received from server")
-                return self.image = UIImage(systemName: "photo")
+        var image: UIImage?
+        
+        await ImageManager.shared.fetchImage(for: serverURL) { result in
+            switch result {
+            case .success(let retrievedImage):
+                image = retrievedImage
+            case .failure(let error):
+                image = backupImage
+                print(error)
             }
-            
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data)
-            }
-            
-        } catch {
-            print("Log: Error fetching data from server")
-            self.image = UIImage(systemName: "photo")
         }
+        
+        await MainActor.run { self.image = image }
     }
 }

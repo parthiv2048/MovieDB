@@ -46,10 +46,19 @@ enum ConstraintConstants: Double {
     case posterImageWidth = 120.0
 }
 
+// MARK: - API Base URLs
+
+enum APIBaseURL {
+    private enum Keys: String {
+        case listBaseURL = "LIST_BASE_URL"
+    }
+    static let listBaseURL = URL(string: Bundle.main.infoDictionary?[Keys.listBaseURL.rawValue] as? String ?? "")
+}
+
 // MARK: - Server Endpoints
 
-enum Server: String {
-    case moviesList = "https://api.themoviedb.org/3/discover/movie?api_key=c91ed3a7a344459eccad9687acf0d07e"
+enum APIEndpoints: String {
+    case moviesList = "/3/discover/movie?api_key=c91ed3a7a344459eccad9687acf0d07e"
     case imageBasePath = "https://image.tmdb.org/t/p/w500"
 }
 

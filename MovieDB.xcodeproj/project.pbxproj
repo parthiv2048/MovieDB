@@ -299,6 +299,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIST_BASE_URL = "https://dev.api.themoviedb.org";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.batch43.MovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -329,6 +330,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIST_BASE_URL = "https://api.themoviedb.org";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.batch43.MovieDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -69,7 +69,7 @@ class MovieDetailsVC: UIViewController {
         let headerView = StrechyHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 400))
         if let posterImage = movieDetailsViewModel?.getPosterImage() {
             Task {
-                await headerView.imageView.loadImage(url: Server.imageBasePath.rawValue + posterImage)
+                await headerView.imageView.loadImage(url: APIEndpoints.imageBasePath.rawValue + posterImage)
             }
         } else {
             headerView.imageView.image = UIImage(systemName: "photo")
